@@ -1,0 +1,168 @@
+---
+lang: en
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 0.58in
+      y: 0.46in
+    mainfont: "Lato"
+    fontsize: 11.5pt
+---
+
+<!--
+  One-page leave-behind. Edit the text inside #ph("...").
+  Column groups are Typst grids. From this directory: quarto render
+-->
+
+```{=typst}
+#let ink = rgb("#1C2421")
+#let muted = rgb("#5E675F")
+#let accent = rgb("#8C4A22")
+#let band = rgb("#F3EFE8")
+#let ph(s) = s
+
+#set page(numbering: none, footer: none)
+#set text(font: "Lato", fill: ink)
+#set par(justify: false, leading: 0.62em, spacing: 0.65em)
+#set block(spacing: 0.65em)
+#set list(marker: text(fill: accent)[•], spacing: 0.38em, indent: 0.9em)
+
+#show heading.where(level: 1): it => {
+  block(above: 0.45em, below: 0.45em)[
+    #set par(spacing: 0pt)
+    #set block(spacing: 0pt)
+    #text(size: 14pt, weight: "bold", fill: ink)[#it.body]
+    #v(0.28em)
+    #line(length: 100%, stroke: 0.9pt + accent)
+  ]
+}
+#show heading.where(level: 2): it => {
+  block(above: 0.15em, below: 0.12em)[
+    #text(size: 12.5pt, weight: "bold", fill: ink)[#it.body]
+  ]
+}
+
+#align(center)[
+  #text(size: 9pt, weight: "bold", fill: accent, tracking: 0.12em)[SMALL-BUSINESS CONSULTING]
+  #v(0.4em)
+  #text(size: 26pt, weight: "bold")[#ph("Active Analytics")]
+  #v(0.35em)
+  #text(size: 13pt)[#ph("Helping aspiring small business operators achieve their goals")]
+  // #v(0.38em)
+  // #text(size: 9pt, fill: muted)[#ph("City")  ·  #ph("email@domain.com")  ·  #ph("phone")  ·  #ph("website")]
+]
+#v(0.1em)
+#line(length: 100%, stroke: 1.5pt + accent)
+#v(0.55em)
+```
+
+# The Situation
+
+```{=typst}
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 18pt,
+  [
+    #strong[Aquiring your first business can be daunting] \
+    #ph("The process of acquiring a business can be an overwhelming task, even for high performing professionals.")
+  ],
+  [
+    #strong[Who this is for] \
+    #ph("We work with sucessful professionals who are in search of their first business acquisition.")
+  ],
+)
+#v(1fr)
+```
+
+# What We Do
+
+```{=typst}
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 14pt,
+  [
+    == #ph("Coaching")
+    #v(0.45em)
+    #ph("In-depth counsel as you explore your first business acquisition.")
+    - #ph("Understand the process of acquiring a business")
+    - #ph("Navigate your options")
+    - #ph("Develop a plan for your first acquisition")
+  ],
+  [
+    == #ph("Partnership Program")
+    #v(0.45em)
+    #ph("End-to-end partnership on your next business acquisition.")
+    - #ph("Sourcing & Due Diligence")
+    - #ph("Financing")
+    - #ph("Negotiation & Closing")
+  ],
+)
+#v(1fr)
+```
+
+<!-- # How an Engagement Runs
+
+```{=typst}
+#grid(
+  columns: (1fr, 1fr, 1fr, 1fr),
+  column-gutter: 12pt,
+  [
+    == 1. Listen
+    #ph("What you learn in the first conversations, and from whom.")
+  ],
+  [
+    == 2. Focus
+    #ph("How you choose the few moves that matter, and what you decline.")
+  ],
+  [
+    == 3. Build
+    #ph("What you and the owner make together, and how often you meet.")
+  ],
+  [
+    == 4. Hand off
+    #ph("What stays behind when you leave, and how the owner runs it.")
+  ],
+)
+``` -->
+
+# Your Team
+
+```{=typst}
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 18pt,
+  [
+    == #ph("Evgeni Kopelevich")
+    #block(above: 0.2em, below: 0.45em)[
+      #image("headshot_evgeni.jpeg", width: 1.45in)
+    ]
+    #strong[#ph("The Seasoned Operator")] \
+    #ph("Over the past 10 years, Evgeni has been a full time business owner and has bought and sold multiple businesses.  In addition to that, he has been an and active commericial and residential real estate investor.  Evgeni's most recent venture has been the lauching of two high performing Jersey Mike's locations.")
+  ],
+  [
+    == #ph("Pritam Dalal")
+    #block(above: 0.2em, below: 0.45em)[
+      #image("headshot_pritam.jpeg", width: 1.45in)
+    ]
+    #strong[#ph("The Technical Advisor")] \
+    #ph("A long time quantitative finance and data science professional. Through his friendship with Evgeni, Pritam has developed a passion for advising aspiring business operators.  In addition to his analytical career, Pritam is an adjunct professor at the University of Minnesota.")
+  ],
+)
+
+#v(1fr)
+#block(
+  width: 100%,
+  fill: band,
+  inset: (x: 16pt, y: 16pt),
+  radius: 2pt,
+)[
+  #align(center)[
+    #text(size: 13.5pt, weight: "bold")[#ph("The Next Step: 60-minute Zoom Coaching Session")]
+    #v(0.4em)
+    #text(size: 11pt)[#ph("You will leave with a clear course of action for your first business acquisition.  A full recording of the session and a written summary will be provided.")]
+    #v(0.45em)
+    #text(size: 11.5pt, weight: "bold", fill: accent)[#ph("pritam@active-analytics.io")  ·  #ph("612-400-4733")]
+  ]
+]
+```
